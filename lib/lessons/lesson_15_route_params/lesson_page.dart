@@ -25,7 +25,8 @@ abstract class ParamsRoutes {
         if (args is Product) {
           return MaterialPageRoute(
             settings: settings,
-            builder: (_) => ProductScreen(product: args, source: 'onGenerateRoute'),
+            builder: (_) =>
+                ProductScreen(product: args, source: 'onGenerateRoute'),
           );
         }
         return _error('Для $product нужен аргумент Product');
@@ -76,7 +77,8 @@ class Lesson15Page extends StatelessWidget {
                     onPressed: () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (_) => ProductScreen(product: p, source: 'конструктор'),
+                        builder: (_) =>
+                            ProductScreen(product: p, source: 'конструктор'),
                       ),
                     ),
                   ),

@@ -12,7 +12,8 @@ class AppTheme {
   static ThemeData dark() => _build(Brightness.dark);
 
   static ThemeData _build(Brightness brightness) {
-    final colors = ColorScheme.fromSeed(seedColor: _brand, brightness: brightness);
+    final colors =
+        ColorScheme.fromSeed(seedColor: _brand, brightness: brightness);
 
     return ThemeData(
       useMaterial3: true,
@@ -27,7 +28,8 @@ class AppTheme {
         labelLarge: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
       ),
 
-      appBarTheme: const AppBarTheme(centerTitle: true, scrolledUnderElevation: 2),
+      appBarTheme:
+          const AppBarTheme(centerTitle: true, scrolledUnderElevation: 2),
 
       // Стиль всех ElevatedButton в приложении.
       // (Старый ButtonThemeData относится к устаревшим RaisedButton/FlatButton,
@@ -37,13 +39,15 @@ class AppTheme {
           backgroundColor: colors.primary,
           foregroundColor: colors.onPrimary,
           padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 14),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
         ),
       ),
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
           padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 14),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
         ),
       ),
 

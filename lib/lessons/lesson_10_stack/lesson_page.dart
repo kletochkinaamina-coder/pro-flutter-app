@@ -12,23 +12,23 @@ class Lesson10Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-        length: 3,
-        child: Scaffold(
-          appBar: AppBar(
-            title: const Text('Stack'),
-            bottom: const TabBar(tabs: [
-              Tab(text: 'Stack'),
-              Tab(text: 'Карточка'),
-              Tab(text: 'IndexedStack'),
-            ]),
-          ),
-          body: const TabBarView(children: [
-            BasicStack(),
-            TravelCard(),
-            LayersSwitcher(),
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('Stack'),
+          bottom: const TabBar(tabs: [
+            Tab(text: 'Stack'),
+            Tab(text: 'Карточка'),
+            Tab(text: 'IndexedStack'),
           ]),
         ),
-      );
+        body: const TabBarView(children: [
+          BasicStack(),
+          TravelCard(),
+          LayersSwitcher(),
+        ]),
+      ),
+    );
   }
 }
 
@@ -82,7 +82,8 @@ class _TravelCardState extends State<TravelCard> {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(24),
         child: Stack(
-          fit: StackFit.expand, // дети без Positioned растягиваются на весь Stack
+          fit: StackFit
+              .expand, // дети без Positioned растягиваются на весь Stack
           children: [
             Image.network(
               'https://picsum.photos/id/1036/800/1200',
@@ -197,7 +198,10 @@ class _LayersSwitcherState extends State<LayersSwitcher> {
           child: Stack(
             // Порядок детей = порядок слоёв: выбранный слой рисуем последним (сверху).
             children: [
-              for (final i in [...[0, 1, 2].where((e) => e != _index), _index])
+              for (final i in [
+                ...[0, 1, 2].where((e) => e != _index),
+                _index
+              ])
                 AnimatedPositioned(
                   key: ValueKey(i),
                   duration: const Duration(milliseconds: 400),
@@ -209,7 +213,8 @@ class _LayersSwitcherState extends State<LayersSwitcher> {
                     width: i == _index ? 180 : 120,
                     height: i == _index ? 130 : 90,
                     decoration: BoxDecoration(
-                      color: _colors[i].withValues(alpha: i == _index ? 1 : 0.4),
+                      color:
+                          _colors[i].withValues(alpha: i == _index ? 1 : 0.4),
                       borderRadius: BorderRadius.circular(16),
                     ),
                   ),

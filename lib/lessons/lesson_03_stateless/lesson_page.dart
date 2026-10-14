@@ -11,9 +11,9 @@ class Lesson03Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: const Text('StatelessWidget')),
-        body: const TeamList(),
-      );
+      appBar: AppBar(title: const Text('StatelessWidget')),
+      body: const TeamList(),
+    );
   }
 }
 
@@ -28,8 +28,12 @@ class TeamList extends StatelessWidget {
       children: const [
         SimpleText('Мой первый StatelessWidget'),
         SizedBox(height: 16),
-        PersonCard(name: 'Амина', role: 'Product manager', icon: Icons.lightbulb),
-        PersonCard(name: 'Иван', role: 'Flutter разработчик', icon: Icons.phone_android),
+        PersonCard(
+            name: 'Амина', role: 'Product manager', icon: Icons.lightbulb),
+        PersonCard(
+            name: 'Иван',
+            role: 'Flutter разработчик',
+            icon: Icons.phone_android),
         PersonCard(name: 'Мария', role: 'Дизайнер', icon: Icons.brush),
       ],
     );

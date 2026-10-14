@@ -12,32 +12,32 @@ class Lesson07Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-        length: 5,
-        child: Scaffold(
-          appBar: AppBar(
-            title: const Text('ListView'),
-            bottom: const TabBar(
-              isScrollable: true,
-              tabs: [
-                Tab(text: 'children'),
-                Tab(text: 'builder'),
-                Tab(text: 'separated'),
-                Tab(text: 'custom'),
-                Tab(text: 'horizontal'),
-              ],
-            ),
-          ),
-          body: const TabBarView(
-            children: [
-              SimpleListView(),
-              InfiniteListView(),
-              SeparatedListView(),
-              CustomListView(),
-              HorizontalListView(),
+      length: 5,
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('ListView'),
+          bottom: const TabBar(
+            isScrollable: true,
+            tabs: [
+              Tab(text: 'children'),
+              Tab(text: 'builder'),
+              Tab(text: 'separated'),
+              Tab(text: 'custom'),
+              Tab(text: 'horizontal'),
             ],
           ),
         ),
-      );
+        body: const TabBarView(
+          children: [
+            SimpleListView(),
+            InfiniteListView(),
+            SeparatedListView(),
+            CustomListView(),
+            HorizontalListView(),
+          ],
+        ),
+      ),
+    );
   }
 }
 
@@ -93,7 +93,14 @@ class InfiniteListView extends StatelessWidget {
 class SeparatedListView extends StatelessWidget {
   const SeparatedListView({super.key});
 
-  static const _cities = ['Алматы', 'Астана', 'Шымкент', 'Караганда', 'Актобе', 'Тараз'];
+  static const _cities = [
+    'Алматы',
+    'Астана',
+    'Шымкент',
+    'Караганда',
+    'Актобе',
+    'Тараз'
+  ];
 
   @override
   Widget build(BuildContext context) {

@@ -11,25 +11,25 @@ class Lesson08Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-        length: 4,
-        child: Scaffold(
-          appBar: AppBar(
-            title: const Text('GridView'),
-            bottom: const TabBar(tabs: [
-              Tab(text: 'count'),
-              Tab(text: 'extent'),
-              Tab(text: 'builder'),
-              Tab(text: 'custom'),
-            ]),
-          ),
-          body: const TabBarView(children: [
-            CountGrid(),
-            ExtentGrid(),
-            BuilderGrid(),
-            CustomGrid(),
+      length: 4,
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('GridView'),
+          bottom: const TabBar(tabs: [
+            Tab(text: 'count'),
+            Tab(text: 'extent'),
+            Tab(text: 'builder'),
+            Tab(text: 'custom'),
           ]),
         ),
-      );
+        body: const TabBarView(children: [
+          CountGrid(),
+          ExtentGrid(),
+          BuilderGrid(),
+          CustomGrid(),
+        ]),
+      ),
+    );
   }
 }
 

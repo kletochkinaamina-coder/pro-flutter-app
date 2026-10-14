@@ -61,7 +61,8 @@ class _ImagesPageState extends State<ImagesPage> {
             height: 200,
             child: FadeInImage(
               placeholder: const AssetImage('assets/images/mountains.png'),
-              image: const NetworkImage('https://picsum.photos/id/1018/800/500'),
+              image:
+                  const NetworkImage('https://picsum.photos/id/1018/800/500'),
               fit: BoxFit.cover,
               fadeInDuration: const Duration(milliseconds: 800),
             ),
@@ -93,7 +94,8 @@ class _ImagesPageState extends State<ImagesPage> {
             children: [
               CircleAvatar(
                 radius: 40,
-                backgroundImage: NetworkImage('https://picsum.photos/id/64/200/200'),
+                backgroundImage:
+                    NetworkImage('https://picsum.photos/id/64/200/200'),
               ),
               SizedBox(width: 16),
               Expanded(child: Text('CircleAvatar с backgroundImage')),

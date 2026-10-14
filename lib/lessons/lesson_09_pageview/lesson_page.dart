@@ -24,10 +24,14 @@ class _Slide {
 }
 
 const _slides = [
-  _Slide('Добро пожаловать', 'Листай страницы пальцем', Icons.waving_hand, Colors.orange),
-  _Slide('PageController', 'Управляет текущей страницей', Icons.tune, Colors.teal),
-  _Slide('Анимация', 'animateToPage плавно переключает', Icons.animation, Colors.indigo),
-  _Slide('Готово', 'jumpToPage переходит без анимации', Icons.check_circle, Colors.green),
+  _Slide('Добро пожаловать', 'Листай страницы пальцем', Icons.waving_hand,
+      Colors.orange),
+  _Slide(
+      'PageController', 'Управляет текущей страницей', Icons.tune, Colors.teal),
+  _Slide('Анимация', 'animateToPage плавно переключает', Icons.animation,
+      Colors.indigo),
+  _Slide('Готово', 'jumpToPage переходит без анимации', Icons.check_circle,
+      Colors.green),
 ];
 
 class OnboardingPage extends StatefulWidget {
@@ -114,7 +118,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
             padding: const EdgeInsets.all(16),
             child: FilledButton(
               onPressed: _next,
-              child: Text(_current == _slides.length - 1 ? 'В начало' : 'Далее'),
+              child:
+                  Text(_current == _slides.length - 1 ? 'В начало' : 'Далее'),
             ),
           ),
         ],

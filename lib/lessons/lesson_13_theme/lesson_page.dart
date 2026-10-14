@@ -28,7 +28,8 @@ class Lesson13Page extends StatelessWidget {
             builder: (context, mode, _) => IconButton(
               tooltip: 'Светлая / тёмная тема',
               onPressed: ThemeController.toggle,
-              icon: Icon(mode == ThemeMode.dark ? Icons.light_mode : Icons.dark_mode),
+              icon: Icon(
+                  mode == ThemeMode.dark ? Icons.light_mode : Icons.dark_mode),
             ),
           ),
         ],
@@ -44,7 +45,8 @@ class Lesson13Page extends StatelessWidget {
             style: text.bodyMedium,
           ),
           const SizedBox(height: 20),
-          const TextField(decoration: InputDecoration(labelText: 'Поле ввода из темы')),
+          const TextField(
+              decoration: InputDecoration(labelText: 'Поле ввода из темы')),
           const SizedBox(height: 20),
           const FeatureCard(
             icon: Icons.palette,
@@ -65,11 +67,13 @@ class Lesson13Page extends StatelessWidget {
           Row(
             children: [
               Expanded(
-                child: ElevatedButton(onPressed: () {}, child: const Text('Главная')),
+                child: ElevatedButton(
+                    onPressed: () {}, child: const Text('Главная')),
               ),
               const SizedBox(width: 12),
               Expanded(
-                child: OutlinedButton(onPressed: () {}, child: const Text('Вторая')),
+                child: OutlinedButton(
+                    onPressed: () {}, child: const Text('Вторая')),
               ),
             ],
           ),

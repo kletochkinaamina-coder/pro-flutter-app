@@ -25,11 +25,13 @@ class _Skill {
 }
 
 const _skills = [
-  _Skill(Icons.widgets, 'Виджеты', 'Stateless, Stateful, Container, Row, Column'),
+  _Skill(
+      Icons.widgets, 'Виджеты', 'Stateless, Stateful, Container, Row, Column'),
   _Skill(Icons.view_list, 'Списки', 'ListView, GridView, PageView'),
   _Skill(Icons.layers, 'Слои', 'Stack, Positioned, IndexedStack'),
   _Skill(Icons.palette, 'Оформление', 'Шрифты, картинки, своя тема'),
-  _Skill(Icons.alt_route, 'Навигация', 'Navigator, именованные маршруты, аргументы'),
+  _Skill(Icons.alt_route, 'Навигация',
+      'Navigator, именованные маршруты, аргументы'),
   _Skill(Icons.devices, 'Платформы', 'Mobile, Desktop и Web из одного кода'),
 ];
 
@@ -50,9 +52,12 @@ class LandingPage extends StatelessWidget {
 
           return CustomScrollView(
             slivers: [
+              // Панель с кнопкой "назад", чтобы вернуться в меню курса.
+              const SliverAppBar(floating: true, title: Text('Web и Firebase')),
               SliverToBoxAdapter(
                 child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 72),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 24, vertical: 72),
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [colors.primary, colors.tertiary],
@@ -63,13 +68,15 @@ class LandingPage extends StatelessWidget {
                       Text(
                         'Мой курс Flutter',
                         textAlign: TextAlign.center,
-                        style: text.displayMedium?.copyWith(color: colors.onPrimary),
+                        style: text.displayMedium
+                            ?.copyWith(color: colors.onPrimary),
                       ),
                       const SizedBox(height: 12),
                       Text(
                         '17 уроков: от первого виджета до релиза в web',
                         textAlign: TextAlign.center,
-                        style: text.titleLarge?.copyWith(color: colors.onPrimary),
+                        style:
+                            text.titleLarge?.copyWith(color: colors.onPrimary),
                       ),
                     ],
                   ),
@@ -83,7 +90,7 @@ class LandingPage extends StatelessWidget {
                     crossAxisCount: columns,
                     mainAxisSpacing: 16,
                     crossAxisSpacing: 16,
-                    mainAxisExtent: 150,
+                    mainAxisExtent: 180,
                   ),
                   itemBuilder: (context, i) {
                     final s = _skills[i];

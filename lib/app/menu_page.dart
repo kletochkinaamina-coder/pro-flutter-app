@@ -22,7 +22,8 @@ class MenuPage extends StatelessWidget {
             builder: (context, mode, _) => IconButton(
               tooltip: 'Светлая / тёмная тема',
               onPressed: ThemeController.toggle,
-              icon: Icon(mode == ThemeMode.dark ? Icons.light_mode : Icons.dark_mode),
+              icon: Icon(
+                  mode == ThemeMode.dark ? Icons.light_mode : Icons.dark_mode),
             ),
           ),
         ],

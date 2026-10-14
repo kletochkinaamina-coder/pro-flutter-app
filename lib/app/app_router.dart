@@ -48,7 +48,8 @@ class AppRouter {
     );
   }
 
-  static MaterialPageRoute<dynamic> _page(RouteSettings settings, WidgetBuilder builder) {
+  static MaterialPageRoute<dynamic> _page(
+      RouteSettings settings, WidgetBuilder builder) {
     return MaterialPageRoute(settings: settings, builder: builder);
   }
 }

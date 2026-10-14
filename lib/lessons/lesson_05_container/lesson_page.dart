@@ -12,9 +12,9 @@ class Lesson05Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: const Text('Container и BoxDecoration')),
-        body: const ContainerGallery(),
-      );
+      appBar: AppBar(title: const Text('Container и BoxDecoration')),
+      body: const ContainerGallery(),
+    );
   }
 }
 

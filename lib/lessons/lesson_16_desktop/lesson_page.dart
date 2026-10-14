@@ -43,7 +43,8 @@ class NotesHome extends StatefulWidget {
 class _NotesHomeState extends State<NotesHome> {
   final _notes = <Note>[
     Note('Добро пожаловать', 'Это десктопное приложение на Flutter.'),
-    Note('Горячие клавиши', 'Ctrl/Cmd + N создаёт заметку, Ctrl/Cmd + Delete удаляет.'),
+    Note('Горячие клавиши',
+        'Ctrl/Cmd + N создаёт заметку, Ctrl/Cmd + Delete удаляет.'),
   ];
   int _selected = 0;
   int _section = 0;
@@ -56,7 +57,8 @@ class _NotesHomeState extends State<NotesHome> {
   void _delete() => setState(() {
         if (_notes.isEmpty) return;
         _notes.removeAt(_selected);
-        _selected = (_selected - 1).clamp(0, _notes.isEmpty ? 0 : _notes.length - 1);
+        _selected =
+            (_selected - 1).clamp(0, _notes.isEmpty ? 0 : _notes.length - 1);
       });
 
   @override
@@ -64,15 +66,19 @@ class _NotesHomeState extends State<NotesHome> {
     // Shortcuts + Actions: стандартный способ повесить клавиатурные сочетания.
     return Shortcuts(
       shortcuts: const {
-        SingleActivator(LogicalKeyboardKey.keyN, control: true): NewNoteIntent(),
+        SingleActivator(LogicalKeyboardKey.keyN, control: true):
+            NewNoteIntent(),
         SingleActivator(LogicalKeyboardKey.keyN, meta: true): NewNoteIntent(),
-        SingleActivator(LogicalKeyboardKey.delete, control: true): DeleteNoteIntent(),
-        SingleActivator(LogicalKeyboardKey.backspace, meta: true): DeleteNoteIntent(),
+        SingleActivator(LogicalKeyboardKey.delete, control: true):
+            DeleteNoteIntent(),
+        SingleActivator(LogicalKeyboardKey.backspace, meta: true):
+            DeleteNoteIntent(),
       },
       child: Actions(
         actions: {
           NewNoteIntent: CallbackAction<NewNoteIntent>(onInvoke: (_) => _add()),
-          DeleteNoteIntent: CallbackAction<DeleteNoteIntent>(onInvoke: (_) => _delete()),
+          DeleteNoteIntent:
+              CallbackAction<DeleteNoteIntent>(onInvoke: (_) => _delete()),
         },
         child: Focus(
           autofocus: true,
@@ -100,7 +106,8 @@ class _NotesHomeState extends State<NotesHome> {
                     if (wide)
                       NavigationRail(
                         selectedIndex: _section,
-                        onDestinationSelected: (i) => setState(() => _section = i),
+                        onDestinationSelected: (i) =>
+                            setState(() => _section = i),
                         labelType: NavigationRailLabelType.all,
                         destinations: const [
                           NavigationRailDestination(
@@ -113,7 +120,10 @@ class _NotesHomeState extends State<NotesHome> {
                           ),
                         ],
                       ),
-                    Expanded(child: _section == 0 ? _notesView(wide) : const _AboutView()),
+                    Expanded(
+                        child: _section == 0
+                            ? _notesView(wide)
+                            : const _AboutView()),
                   ],
                 ),
               );
@@ -147,7 +157,9 @@ class _NotesHomeState extends State<NotesHome> {
       onChanged: () => setState(() {}),
     );
     // На широком экране список и редактор рядом, на узком только список/редактор.
-    if (!wide) return Column(children: [Expanded(child: list), Expanded(child: editor)]);
+    if (!wide) {
+      return Column(children: [Expanded(child: list), Expanded(child: editor)]);
+    }
     return Row(
       children: [
         SizedBox(width: 300, child: list),
@@ -173,7 +185,8 @@ class _NoteEditor extends StatelessWidget {
           TextFormField(
             initialValue: note.title,
             style: Theme.of(context).textTheme.headlineSmall,
-            decoration: const InputDecoration(border: InputBorder.none, hintText: 'Заголовок'),
+            decoration: const InputDecoration(
+                border: InputBorder.none, hintText: 'Заголовок'),
             onChanged: (v) {
               note.title = v;
               onChanged();
@@ -184,7 +197,8 @@ class _NoteEditor extends StatelessWidget {
               initialValue: note.body,
               maxLines: null,
               expands: true,
-              decoration: const InputDecoration(border: InputBorder.none, hintText: 'Текст заметки'),
+              decoration: const InputDecoration(
+                  border: InputBorder.none, hintText: 'Текст заметки'),
               onChanged: (v) {
                 note.body = v;
                 onChanged();

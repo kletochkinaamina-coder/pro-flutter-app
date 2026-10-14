@@ -43,7 +43,8 @@ class Lesson14Page extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Text('Анонимный маршрут', style: TextStyle(fontWeight: FontWeight.bold)),
+            const Text('Анонимный маршрут',
+                style: TextStyle(fontWeight: FontWeight.bold)),
             const SizedBox(height: 8),
             FilledButton(
               onPressed: () => Navigator.push(
@@ -58,15 +59,18 @@ class Lesson14Page extends StatelessWidget {
               child: const Text('push и получить результат из pop'),
             ),
             const SizedBox(height: 32),
-            const Text('Именованные маршруты', style: TextStyle(fontWeight: FontWeight.bold)),
+            const Text('Именованные маршруты',
+                style: TextStyle(fontWeight: FontWeight.bold)),
             const SizedBox(height: 8),
             OutlinedButton(
-              onPressed: () => Navigator.pushNamed(context, NavigationRoutes.catalog),
+              onPressed: () =>
+                  Navigator.pushNamed(context, NavigationRoutes.catalog),
               child: const Text('pushNamed: Каталог'),
             ),
             const SizedBox(height: 8),
             OutlinedButton(
-              onPressed: () => Navigator.pushNamed(context, NavigationRoutes.settings),
+              onPressed: () =>
+                  Navigator.pushNamed(context, NavigationRoutes.settings),
               child: const Text('pushNamed: Настройки'),
             ),
           ],
@@ -130,8 +134,8 @@ class CatalogScreen extends StatelessWidget {
           children: [
             FilledButton(
               // Заменить текущий экран (назад на Каталог уже не вернуться).
-              onPressed: () =>
-                  Navigator.pushReplacementNamed(context, NavigationRoutes.settings),
+              onPressed: () => Navigator.pushReplacementNamed(
+                  context, NavigationRoutes.settings),
               child: const Text('pushReplacementNamed: Настройки'),
             ),
             const SizedBox(height: 8),
@@ -156,8 +160,8 @@ class SettingsScreen extends StatelessWidget {
       body: Center(
         child: FilledButton(
           // Закрыть все экраны до экрана урока.
-          onPressed: () =>
-              Navigator.popUntil(context, ModalRoute.withName(NavigationRoutes.home)),
+          onPressed: () => Navigator.popUntil(
+              context, ModalRoute.withName(NavigationRoutes.home)),
           child: const Text('popUntil: к экрану урока'),
         ),
       ),

@@ -127,14 +127,16 @@ class _FlexPlaygroundState extends State<FlexPlayground> {
     List<T> values,
     ValueChanged<T> onChanged,
   ) {
-    return Row(
-      mainAxisSize: MainAxisSize.min,
+    // Wrap, а не Row: на узком экране список переносится на новую строку.
+    return Wrap(
+      crossAxisAlignment: WrapCrossAlignment.center,
       children: [
         Text('$label: '),
         DropdownButton<T>(
           value: value,
           items: [
-            for (final v in values) DropdownMenuItem(value: v, child: Text(v.name)),
+            for (final v in values)
+              DropdownMenuItem(value: v, child: Text(v.name)),
           ],
           onChanged: (v) {
             if (v != null) onChanged(v);

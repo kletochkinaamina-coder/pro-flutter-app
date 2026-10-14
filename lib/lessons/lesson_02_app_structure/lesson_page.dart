@@ -26,8 +26,10 @@ class ScaffoldDemo extends StatelessWidget {
       // 1. Верхняя панель
       appBar: AppBar(
         title: const Text('appBar'),
-        // Экран открыт поверх меню, поэтому слева стоит кнопка "назад".
+        // Экран открыт поверх меню, поэтому слева стоит кнопка "назад"
+        // (без leading AppBar поставил бы сюда кнопку drawer).
         // Drawer открываем отдельной кнопкой (или свайпом от левого края).
+        leading: const BackButton(),
         actions: [
           Builder(
             builder: (context) => IconButton(
@@ -50,8 +52,12 @@ class ScaffoldDemo extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         children: const [
           _Slot(name: 'body', text: 'Основное содержимое экрана'),
-          _Slot(name: 'Дерево виджетов', text: 'main → runApp → MaterialApp → Scaffold → ...'),
-          _Slot(name: 'Всё есть виджет', text: 'Текст, отступ, кнопка, экран: всё это виджеты'),
+          _Slot(
+              name: 'Дерево виджетов',
+              text: 'main → runApp → MaterialApp → Scaffold → ...'),
+          _Slot(
+              name: 'Всё есть виджет',
+              text: 'Текст, отступ, кнопка, экран: всё это виджеты'),
         ],
       ),
       // 4. Плавающая кнопка
